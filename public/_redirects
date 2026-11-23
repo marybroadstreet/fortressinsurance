@@ -1,0 +1,11 @@
+# 301 redirects from the old Drupal site's URLs that no longer exist.
+# (All product and quote page URLs were kept the same, so they need no redirect.)
+/home                          /                                       301
+/home-0                        /                                       301
+/home-insurance                /homeowners-insurance-request-quote     301
+/homeowner                     /products/homeowners-insurance          301
+/life-insurance-quote          /life-insurance                         301
+/contact-us-confirmation       /contact-us                             301
+/products                      /get-a-quote                            301
+/quotes                        /get-a-quote                            301
+/node/*                        /                                       301

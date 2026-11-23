@@ -1,0 +1,18 @@
+# Copy to .dev.vars for local development with `npm run dev` (wrangler dev).
+# .dev.vars is git-ignored — never commit real keys.
+
+# Secrets (in production: Cloudflare dashboard → Settings → Variables and Secrets → type "Secret",
+# or `npx wrangler secret put BREVO_API_KEY`)
+BREVO_API_KEY=xkeysib-your-key
+RECAPTCHA_SECRET_KEY=your-recaptcha-v2-secret
+
+# Plain variables
+RECAPTCHA_SITE_KEY=your-recaptcha-v2-site-key
+GA_MEASUREMENT_ID=G-XXXXXXXXXX
+CONTACT_TO_EMAIL=info@fortressinsurancesolutions.com
+BREVO_SENDER_EMAIL=website@fortressinsurancesolutions.com
+# Optional: Google Ads conversion tag already used on the old site
+GOOGLE_ADS_ID=AW-970237936
+
+# Local only: lets the form work without reCAPTCHA keys. Never set this in Cloudflare.
+DEV_SKIP_RECAPTCHA=true

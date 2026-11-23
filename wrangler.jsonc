@@ -1,0 +1,29 @@
+// Cloudflare Worker config for fortressinsurancesolutions.com
+//
+// Build command (Cloudflare dashboard → Workers Builds): npm run build
+// Deploy command: npx wrangler deploy
+// The build writes the prerendered site to ./dist, which must match assets.directory below.
+//
+// Settings are NOT defined here (an empty [vars] block would overwrite the values
+// set in the dashboard on every deploy). Add them in Cloudflare → Workers →
+// fortressinsurance → Settings → Variables and Secrets:
+//   Secrets:   BREVO_API_KEY, RECAPTCHA_SECRET_KEY
+//   Variables: RECAPTCHA_SITE_KEY, GA_MEASUREMENT_ID, CONTACT_TO_EMAIL,
+//              BREVO_SENDER_EMAIL, GOOGLE_ADS_ID (optional)
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fortressinsurance",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "keep_vars": true,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}
